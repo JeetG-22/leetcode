@@ -11,8 +11,9 @@ class Solution:
         }
         total = 0
         i = 0
+        special_cases = ["IV", "IX", "XL", "XC", "CD", "CM"]
         while i < len(s):
-            if s[i:i+2] in ["IV", "IX", "XL", "XC", "CD", "CM"] and s[i+1]:
+            if s[i:i+2] in special_cases and s[i+1]:
                 total += table[s[i+1]] - table[s[i]]
                 i += 1
             else:
