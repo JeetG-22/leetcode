@@ -13,7 +13,7 @@ class Solution:
         i = 0
         special_cases = ["IV", "IX", "XL", "XC", "CD", "CM"]
         while i < len(s):
-            if s[i:i+2] in special_cases and s[i+1]:
+            if i + 1 < len(s) and s[i:i+2] in special_cases:
                 total += table[s[i+1]] - table[s[i]]
                 i += 1
             else:
