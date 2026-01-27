@@ -5,7 +5,7 @@ class Solution:
         high = max(piles)
         while low <= high:
             mid = (low + high) // 2
-            val = self.find_min(piles, h, mid)
+            val = self.in_time(piles, h, mid)
             if val < 0:
                 low = mid + 1
             else:
@@ -14,7 +14,7 @@ class Solution:
 
 
         
-    def find_min(self, piles, h, k):
+    def in_time(self, piles, h, k):
         dur = 0
         for banana in piles:
             dur += math.ceil(banana / k)
