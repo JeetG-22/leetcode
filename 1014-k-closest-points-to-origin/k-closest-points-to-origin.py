@@ -8,10 +8,9 @@ class Solution:
             dist = math.sqrt(x**2 + y**2)
             heapq.heappush(heap, (dist, point))
         res = []
-        i =  0
-        while i < k:
+        while k:
             res.append(heapq.heappop(heap)[1]) 
-            i += 1
+            k -= 1
         return res
             
         
