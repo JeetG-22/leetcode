@@ -4,9 +4,9 @@ class Solution:
         return self.bfs(grid)
     
     def bfs(self, grid):
-        if grid[0][0] == 1 or grid[-1][-1]:
-            return -1
         ROWS, COLS = len(grid), len(grid[0])
+        if grid[0][0] == 1 or grid[ROWS-1][COLS-1]:
+            return -1
         length = 1
         q = deque()
         visited = set()
