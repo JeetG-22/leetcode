@@ -4,7 +4,7 @@ class Solution:
         return self.bfs(grid)
     
     def bfs(self, grid):
-        if grid[0][0] == 1:
+        if grid[0][0] == 1 or grid[-1][-1]:
             return -1
         ROWS, COLS = len(grid), len(grid[0])
         length = 1
