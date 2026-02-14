@@ -1,14 +1,16 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        memo = {}
-        return self.helper(n, memo)
+        cache = {}
+        def count(n):
+            if n < 0:
+                return 0
+            if n == 0:
+                return 1
+            if n in cache:
+                return cache[n]
+            cache[n] = count(n-1) + count(n-2)
+            return cache[n]
 
-    def helper(self, n, memo):
-        if n <= 1:
-            return 1
-        if n not in memo:
-            memo[n] = self.helper(n-1, memo) + self.helper(n-2, memo)
-        return memo[n]
-
+        return count(n)
 
         
